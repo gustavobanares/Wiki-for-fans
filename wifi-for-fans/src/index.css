@@ -1,3 +1,19 @@
+/* Diretivas do Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilos personalizados (como o plano de fundo) */
+@layer utilities {
+  .bg-main-background {
+    background: linear-gradient(135deg, #1a1a1d, #2d2d34, #0a0a0f); /* Gradiente */
+  }
+}
+
+/* Garantindo que o corpo do site tenha o plano de fundo aplicado */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1d, #2d2d34, #0a0a0f); /* Gradiente */
+}
