@@ -5,6 +5,7 @@ import greenGoblinImage from '../img/greengoblin.jpg';
 import gwenImage from '../img/gwen.jpg';
 import maryJaneImage from '../img/maryjane.jpg';
 import drOctopusImage from '../img/droctopus.jpg';
+import lizardImage from '../img/lizard.jpg';
 
 const Card = ({ character }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,22 +17,22 @@ const Card = ({ character }) => {
   return (
     <div className="max-w-sm mx-auto">
       <div
-        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-105"
         onClick={toggleModal}
+        style={{ width: '250px', height: '350px' }}
       >
         <img
-          className="w-full h-auto object-cover"
+          className="w-full h-3/4 object-cover"
           src={character.image}
           alt={character.name}
-          style={{ aspectRatio: '1 / 1' }}
         />
-        <div className="p-4">
-          <h1 className="text-2xl font-bold text-gray-800">{character.name}</h1>
+        <div className="p-4 text-center">
+          <h1 className="text-xl font-bold text-gray-800">{character.name}</h1>
         </div>
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-6 max-w-md w-full">
             <h2 className="text-xl font-bold mb-4">{character.name}</h2>
             <p className="text-gray-600">Age: {character.age}</p>
@@ -107,6 +108,14 @@ const characters = [
     identity: "Otto Octavius",
     image: drOctopusImage,
     quote: "Intelligence is a privilege, and it must be used for the good of mankind.",
+  },
+  {
+    name: "Lizard",
+    age: 40,
+    enemies: ["Spiderman"],
+    identity: "Dr. Curt Connors",
+    image: lizardImage,
+    quote: "I am beyond human now, Spider-Man!",
   },
 ];
 
